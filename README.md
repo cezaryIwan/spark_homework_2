@@ -1,8 +1,11 @@
 Beside main ones I am using few additional notebooks:
 - configuration -> variables used in several notebooks
 - encryption_helper -> helper for encrypting and decrypting PII fields
-- transformation_helper -> helper for cleaning data in silver layer
-You can find pipeline configuration in job.json file
+- transformation_helper -> helper for cleaning data in silver layer<br>
+You can find pipeline configuration in job.json file, pipeline performed succesfully and have set notifications on failure:<br>
+<img width="1647" height="828" alt="image" src="https://github.com/user-attachments/assets/ff62bf87-4588-491d-9469-b6675f7a2f7b" /><br>
+I'm also using databricks based secrets, for keepeing safely storage account's name and key:<br>
+<img width="470" height="67" alt="image" src="https://github.com/user-attachments/assets/b3d1c0bd-d96b-44d9-a295-5b9bf8f9438e" /><br>
 _____
 # 01_create_metadata
 Schemas are created:<br>
