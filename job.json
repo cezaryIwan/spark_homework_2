@@ -1,7 +1,7 @@
 {
-  "created_time":1754785827173,
+  "created_time":1754926348348,
   "creator_user_name":"drugiekonto11@proton.me",
-  "job_id":405603979138021,
+  "job_id":833113244996837,
   "run_as_user_name":"drugiekonto11@proton.me",
   "settings": {
     "email_notifications": {
@@ -12,7 +12,7 @@
     },
     "format":"MULTI_TASK",
     "max_concurrent_runs":1,
-    "name":"New Job Aug 10, 2025, 02:30 AM",
+    "name":"spark_homework_2_job",
     "notification_settings": {
       "no_alert_for_canceled_runs":false,
       "no_alert_for_skipped_runs":false
@@ -25,62 +25,62 @@
         "email_notifications": {},
         "existing_cluster_id":"0810-193244-2ab4j2r6",
         "notebook_task": {
-          "notebook_path":"/Workspace/Shared/spark_hm_2/01_create_metadata",
+          "notebook_path":"/Workspace/Users/drugiekonto11@proton.me/spark_homework_2/notebooks/01_create_metadata",
           "source":"WORKSPACE"
         },
         "run_if":"ALL_SUCCESS",
-        "task_key":"Create_metadata",
+        "task_key":"01_create_metadata",
         "timeout_seconds":0,
         "webhook_notifications": {}
       },
       {
         "depends_on": [
           {
-            "task_key":"Create_metadata"
+            "task_key":"01_create_metadata"
           }
         ],
         "email_notifications": {},
         "existing_cluster_id":"0810-193244-2ab4j2r6",
         "notebook_task": {
-          "notebook_path":"/Workspace/Shared/spark_hm_2/02_load_bronze_data",
+          "notebook_path":"/Workspace/Users/drugiekonto11@proton.me/spark_homework_2/notebooks/02_load_bronze_data",
           "source":"WORKSPACE"
         },
         "run_if":"ALL_SUCCESS",
-        "task_key":"Load_bronze_data",
+        "task_key":"02_load_bronze_data",
         "timeout_seconds":0,
         "webhook_notifications": {}
       },
       {
         "depends_on": [
           {
-            "task_key":"Load_bronze_data"
+            "task_key":"02_load_bronze_data"
           }
         ],
         "email_notifications": {},
         "existing_cluster_id":"0810-193244-2ab4j2r6",
         "notebook_task": {
-          "notebook_path":"/Workspace/Shared/spark_hm_2/03_bronze_to_silver",
+          "notebook_path":"/Workspace/Users/drugiekonto11@proton.me/spark_homework_2/notebooks/03_bronze_to_silver",
           "source":"WORKSPACE"
         },
         "run_if":"ALL_SUCCESS",
-        "task_key":"Bronze_to_silver",
+        "task_key":"03_bronze_to_silver",
         "timeout_seconds":0,
         "webhook_notifications": {}
       },
       {
         "depends_on": [
           {
-            "task_key":"Bronze_to_silver"
+            "task_key":"03_bronze_to_silver"
           }
         ],
         "email_notifications": {},
         "existing_cluster_id":"0810-193244-2ab4j2r6",
         "notebook_task": {
-          "notebook_path":"/Workspace/Shared/spark_hm_2/04_silver_to_gold",
+          "notebook_path":"/Workspace/Users/drugiekonto11@proton.me/spark_homework_2/notebooks/04_silver_to_gold",
           "source":"WORKSPACE"
         },
         "run_if":"ALL_SUCCESS",
-        "task_key":"Silver_to_gold",
+        "task_key":"04_silver_to_gold",
         "timeout_seconds":0,
         "webhook_notifications": {}
       }
