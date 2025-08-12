@@ -7,6 +7,23 @@ You can find pipeline configuration in job.json file, pipeline performed succesf
 I'm also using databricks based secrets, for keepeing safely storage account's name and key:<br>
 <img width="470" height="67" alt="image" src="https://github.com/user-attachments/assets/b3d1c0bd-d96b-44d9-a295-5b9bf8f9438e" /><br>
 _____
+
+# Setup of infrastructure
+1. Created a resource group with <br>
+`az group create --name sparkhm2 --location polandcentral`<br>
+2. Created storage account with<br>
+`az storage account create --name sasparkhm2 --resource-group sparkhm2 --location polandcentral --sku Standard_LRS`<br>
+3. Created storage container with<br>
+`az storage container create --name contsparkhm2 --account-name sasparkhm2`<br>
+4. Updated terraform configuration in main.tf<br>
+5. Deployed infrastructure with<br>
+`terraform init && terraform plan -out terraform.plan && terraform apply terraform.plan`<br>
+6. From that point I worked mostly with Databricks GUI hosted by my Azure subscription. One more thing was setting secrets scope with databricks CLI<br>
+`create-scope --scope <SCOPE_NAME>`
+`databricks secrets put-secret --scope my-scope --key <STORAGE_ACCOUNT_KEY> --string-value "<KEY_VALUE>"`
+`databricks secrets put-secret --scope my-scope --key <STORAGE_ACCOUNT_NAME> --string-value "<NAME_VALUE>"`
+`databricks secrets list-secrets --scope my-scope`
+
 # 01_create_metadata
 Schemas are created:<br>
 <img width="454" height="438" alt="image" src="https://github.com/user-attachments/assets/676d145a-3b7f-4ce5-b057-0b3398889bd4" /><br>
